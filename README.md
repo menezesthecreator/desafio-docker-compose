@@ -8,9 +8,3 @@ Ambiente multi-container composto por uma API REST em Node.js (`api`) e um banco
 - **`db` (MySQL 8.0):** armazena os dados no volume `mysql_data` (`/var/lib/mysql`), garantindo persistência mesmo ao recriar os contêineres.
 - **Rede `backend_net` (`bridge`):** conecta `api` e `db` por resolução DNS interna (`DB_HOST=db`), sem expor a porta do banco externamente.
 - **Variáveis de ambiente:** gerenciadas via `.env` (baseado em `.env.example`), mantendo credenciais fora do código-fonte.
-
-## Como executar
-
-1. Crie o arquivo `.env` a partir do modelo:
-   ```bash
-   cp .env.example .env
